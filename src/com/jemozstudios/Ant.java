@@ -60,6 +60,8 @@ public class Ant {
             way.add(moveToCity);
             cities.remove(new Integer(moveToCity));
         }
+        way_lenth += world.getLenth_peak(place, way.get(0)-1);
+        way.add(way.get(0));
     }
     public double probability_all_cities_in_length(double feromon, double length){
         return Math.pow(feromon, ALPHA) * Math.pow(200/length, BETTA);

@@ -1,17 +1,16 @@
 package com.jemozstudios;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.ListIterator;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+        Random random = new Random();
         double best_way = 1000000000;
         String best_way_city_num = "";
         int countIter, antCount;
         int Q = 4;
         Scanner scanner = new Scanner(System.in);
+
         System.out.print("Введите количество муравьев:  ");
         antCount= scanner.nextInt();
         System.out.print("Введите количество итераций:  ");
@@ -27,7 +26,7 @@ public class Main {
         ArrayList<Ant> antColony = new ArrayList<Ant>();
         Iterator<Ant> antColonyIter;
         for (int i = 0; i < antCount; i++){
-            antColony.add(new Ant(cities, world, 1 + (int)(Math.random()%(cities-1))));
+            antColony.add(new Ant(cities, world, 1 + random.nextInt(cities-1)));
             //antColony.add(new Ant(cities, world, 1));
         }
 
